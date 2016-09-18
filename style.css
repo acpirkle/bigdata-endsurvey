@@ -1,0 +1,22 @@
+table.table-hover {
+  text-align: center;
+  border-top: 3px solid;
+  border-top-color: #b30000;
+  border-bottom: 3px solid;
+  border-bottom-color: #b30000;
+  align: center;
+}
+th{
+  text-align: center;
+  align: center;
+  border-bottom: 2px solid;
+
+}
+tr {
+  text-align: center;
+  align: center;
+}
+div.adminTbl {
+  padding: 25;
+
+}
