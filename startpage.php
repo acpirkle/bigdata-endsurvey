@@ -7,6 +7,14 @@ if ( isset($_POST['username']) && isset($_POST['password']) ) {
         return;
     }
 }
+
+if (isset($_POST['email'])) {
+  if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)===false){
+      header( 'Location: endsurvey.php');
+  } else {
+    header( 'Location: startpage.php');
+  }
+}
 ?>
 <html>
 <head>
@@ -14,16 +22,16 @@ if ( isset($_POST['username']) && isset($_POST['password']) ) {
 <body>
 <h1>Welcome!</h1>
 <!-- Form for students requiring only email -->
-<form class="s1" method="post" action="endsurvey.php">
+<form class="s1" method="post">
   <h4>Enter Email to enter Survey</h4>
   <p><label for="email">Email:</label>
     <input type="text" name="email" id="email" size="30" maxlength="50"/>
     <input type="submit" value="Enter" name ="emailSubmit"/></p>
 </form>
 
-<?php  if (isset($_POST['emailSubmit'])){
-  $email = $_POST['email'];
-  $_SESSION['email'] = $email;
+<?php  if (isset($_POST['email'])){
+
+  $_SESSION['email'] = $_POST['email'];
 }
 ?>
 

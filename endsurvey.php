@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php session_start();
+echo "Welcome ".$_SESSION['email'];
+$errormsg = "";
+?>
+
 <html>
 <head>
 <title>Computer Science Exit Interview</title>
@@ -7,7 +11,8 @@
   <h1>Exit Survey</h1>
   <h2>Department of Computer Science</h2>
   <h2>Valdosta State University</h2>
-<form id="survey" name="survey" method="post" action="endsurvey.php">
+  <p style="color:#ff0000"> <?php echo $errormsg; ?></p>
+<form id="survey" name="survey" method="post">
   <br>
   What are your plans after graduation?
   <select name="question_1">
@@ -33,9 +38,53 @@
 
 
       <p style="text-align: center; font-weight: bold">Thank you for your time and effort!</p>
-      <div style="text-align: center"><input type="submit" value="Submit"/></div>
+      <div style="text-align: center"><input type="submit"  name="submit" value="Submit"/></div>
 </form>
 
+
+<?php
+function push(){
+    global $errormsg;
+  if ($_POST['question_2'] && $_POST['question_3'] == null) {
+    $errormsg = "* All questions must be answered!";
+    return;
+  }
+  elseif ($_POST['question_2'] == null) {
+    $errormsg = "* Question 2 must be answered!";
+
+  }
+  elseif ($_POST['question_3'] == null) {
+    $errormsg = "* Question 3 must be answered!";
+  }
+  else {
+    // Do SQL Stuff
+    // Creating connection to database
+    $conn = new mysqli("localhost","root","password","endSurvey");
+    // Check connection
+    if($conn->connect_error){
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $email = $_SESSION['email'];
+    $question_1 = $_POST['question_1'];
+    $question_2 = $_POST['question_2'];
+    $question_3 = $_POST['question_3'];
+    $sql="INSERT INTO endSurveyTable(email,question1,question2, question3)
+    VALUES('$email','$question_1','$question_2','$question_3')";
+
+    if($conn->query($sql)=== true) {
+      echo "we did it yay!!";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+    header( 'Location: startpage.php');
+  }
+}
+if (isset($_POST['submit'])) {
+  push();
+}
+ ?>
 
 </body>
 
