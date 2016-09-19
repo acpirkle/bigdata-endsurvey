@@ -89,6 +89,7 @@ function push(){
 }
 if (isset($_POST['submit'])) {
   push();
+  session_destroy();
 }
  ?>
 

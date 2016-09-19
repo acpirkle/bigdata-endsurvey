@@ -3,8 +3,10 @@ if ( isset($_POST['username']) && isset($_POST['password']) ) {
     unset($_SESSION['username']);  // Logout current user
     if ( $_POST['password'] == "password" && $_POST['username'] == "admin") {
         $_SESSION['username'] = $_POST['username'];
-        header( 'Location: admin.php' ) ;
+        header( 'Location: admin.php');
         return;
+    }else {
+      header('Location: startpage.php');
     }
 }
 
