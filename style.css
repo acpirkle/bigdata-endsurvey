@@ -6,6 +6,13 @@ table.table-hover {
   border-bottom-color: #b30000;
   align: center;
 }
+thead{
+  border-bottom: 3px solid;
+  border-bottom-color: #b30000;
+  background-color: #b30000;
+  color: #ffffff;
+
+}
 th{
   text-align: center;
   align: center;
@@ -30,10 +37,13 @@ div.jumbotron{
 div.s1 {
   width: 300;
   padding-left: 50;
+  margin: 0 auto;
 }
 div.admin {
   width: 300;
-  padding-left: 50;
+  position:absolute;
+  right: 0;
+  padding-right: 20;
 }
 .btn {
   background-color: #b30000;
