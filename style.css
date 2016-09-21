@@ -1,3 +1,6 @@
+body{
+  background-color: #666666;
+}
 table.table-hover {
   text-align: center;
   border-top: 3px solid;
@@ -27,23 +30,33 @@ div.adminTbl {
   padding: 100;
 
 }
+div.q1{
+  padding-left: 50;
+  padding-right: 50;
+}
+div.q2{
+  padding-left: 50;
+  padding-right: 50;
+}
+div.q3{
+  padding-left: 50;
+  padding-right: 50;
+}
+div.submitSurvey{
+  text-align: center
 
+}
 div.jumbotron{
   background-color: #b30000;
   }
-.jumbotron h1{
+.jumbotron h1,h2,p{
   color: #ffffff;
 }
-div.s1 {
+
+div.s1,div.admin {
   width: 300;
   padding-left: 50;
   margin: 0 auto;
-}
-div.admin {
-  width: 300;
-  position:absolute;
-  right: 0;
-  padding-right: 20;
 }
 .btn {
   background-color: #b30000;

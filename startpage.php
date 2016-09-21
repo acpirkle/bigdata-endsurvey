@@ -34,21 +34,22 @@ if (isset($_POST['email'])) {
     <h1>Welcome!</h1>
   </div>
 </div>
+
 <div class="s1 form-group">
 <form method="post">
   <h4>Enter Email to begin Survey</h4>
-  <label for="email">Email:</label>
-    <input type="email" class="form-control" name="email" id="email" maxlength="50"/>
+  <p><label for="email">Email:</label>
+    <input type="email" class="form-control" name="email" id="email" maxlength="50"/></p>
     <input type="submit" class="btn btn-default btn-sm" value="Enter" name ="emailSubmit"/>
-  </div>
-
 </form>
+</div>
 
 <?php  if (isset($_POST['email'])){
 
   $_SESSION['email'] = $_POST['email'];
 }
 ?>
+<p style="text-align: center"> OR </p>
 <div class="admin form-group">
 <!-- Form for administrators requiring username and password -->
 <form class="admin" method="post">
