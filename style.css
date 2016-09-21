@@ -1,5 +1,9 @@
 body{
   background-color: #666666;
+  color: #ffffff;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #b30000;
 }
 table.table-hover {
   text-align: center;
@@ -15,6 +19,10 @@ thead{
   background-color: #b30000;
   color: #ffffff;
 
+}
+.form-control{
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
 }
 th{
   text-align: center;
