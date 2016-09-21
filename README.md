@@ -7,5 +7,6 @@ Completed:
 + (10 pts) Provide a way for administrator to view all the survey data in the format of table.
 + (10 pts) Provide a way for administrator to sort all the data entries in the order of timestamp, i.e., from the latest entry to the earliest entry.
 + (10 pts) Provide a way for administrator to delete any specific survey entry due to its poor quality.
+
 Still to Come:
 - Perhaps convert administrator access to dropdown.
