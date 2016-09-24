@@ -5,6 +5,9 @@ body{
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #b30000;
 }
+select option{
+  background-color: #666666;
+}
 table.table-hover {
   text-align: center;
   border-top: 3px solid;
